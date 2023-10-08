@@ -18,15 +18,15 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: ReactNode}): ReactElement{
   return (
     <html lang="en">
-      <body className='flex flex-col h-screen'>
+      <body className='flex flex-col'>
         <Nav/>
         <div className='flex flex-row grow'>
-          <div className='basis-1/5 h-full px-12'>
-            <div className='h-full debug'>
+          <div className='basis-1/4 h-full px-12 py-2'>
+            <div className=''>
               <NoteContents/>
             </div>
           </div>
-          <div className='grow debug'>{children}</div>
+          <div className='grow px-12 py-2'>{children}</div>
         </div>
       </body>
     </html>

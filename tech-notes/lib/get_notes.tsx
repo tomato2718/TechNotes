@@ -13,6 +13,7 @@ export function get_content_tree(): Dree {
         sizeInBytes: false,
         hash: true,
         isSymbolicLink: false,
+        exclude: ['/README.md', '**/img'],
         extensions: [ 'md', 'rst' ]
       };
     const dir_tree = scan(postsDirectory, options)
