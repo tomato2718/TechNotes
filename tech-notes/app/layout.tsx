@@ -1,12 +1,13 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
-import type { Metadata } from 'next'
+import type { Metadata } from 'next';
 import type {
   ReactElement,
   ReactNode
-} from 'react'
+} from 'react';
 
-import '../globals/globals.css'
+import '../globals/globals.css';
+import { NoteContents } from '../components/contents';
 
 
 export const metadata: Metadata = {
@@ -14,18 +15,17 @@ export const metadata: Metadata = {
   description: 'Testing...',
 }
 
-export default function RootLayout({children}: {children: ReactNode}){
+// TODO: 左邊 overflow-y
+export default function RootLayout({children}: {children: ReactNode}): ReactElement{
   return (
     <html lang="en">
-      <body className='h-screen'>
+      <body className='flex flex-col'>
         <Nav/>
-        <div className='flex flex-row h-full'>
-          <div className='basis-1/5 h-full px-12'>
-            <div className='h-full debug'>
-              left bar
-            </div>
+        <div className='flex flex-row grow'>
+          <div className='fixed w-1/4 h-full px-12 py-2 overflow-y-auto'>
+              <NoteContents/>
           </div>
-          <div className='grow h-full debug'>{children}</div>
+          <div className='grow ms-[25%] px-12 py-2'>{children}</div>
         </div>
       </body>
     </html>
@@ -46,8 +46,8 @@ function Nav(): ReactElement{
             <span className='text-lg font-bold'>Tomato2718 的技術筆記</span>
           </div>
           <nav className='flex flex-row h-auto' id='Navbar'>
-            <ul className='flex flex-row gap-2 h-full'>
-              <li><a href="#">首頁</a></li>
+            <ul className='flex flex-row gap-1 h-full'>
+              <li><a href="/">首頁</a></li>
               <li><a href="#">GitHub</a></li>
               <li><a href="#">聯絡我</a></li>
             </ul>
