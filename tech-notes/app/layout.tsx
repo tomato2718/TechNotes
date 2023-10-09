@@ -47,7 +47,7 @@ function Nav(): ReactElement{
           </div>
           <nav className='flex flex-row h-auto' id='Navbar'>
             <ul className='flex flex-row gap-1 h-full'>
-              <li><a href="#">首頁</a></li>
+              <li><a href="/">首頁</a></li>
               <li><a href="#">GitHub</a></li>
               <li><a href="#">聯絡我</a></li>
             </ul>
