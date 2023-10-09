@@ -15,18 +15,17 @@ export const metadata: Metadata = {
   description: 'Testing...',
 }
 
+// TODO: 左邊 overflow-y
 export default function RootLayout({children}: {children: ReactNode}): ReactElement{
   return (
     <html lang="en">
       <body className='flex flex-col'>
         <Nav/>
         <div className='flex flex-row grow'>
-          <div className='basis-1/4 h-full px-12 py-2'>
-            <div className=''>
+          <div className='fixed w-1/4 h-full px-12 py-2 overflow-y-auto'>
               <NoteContents/>
-            </div>
           </div>
-          <div className='grow px-12 py-2'>{children}</div>
+          <div className='grow ms-[25%] px-12 py-2'>{children}</div>
         </div>
       </body>
     </html>
