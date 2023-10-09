@@ -6,7 +6,7 @@ name: Deploy Next.js site to Pages
 
 defaults:
   run:
-    working-directory: web
+    working-directory: ./tech-notes
 on:
   # Runs on pushes targeting the default branch
   push:
