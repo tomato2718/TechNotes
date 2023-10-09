@@ -69,11 +69,11 @@ jobs:
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: debug
-        run: pwd && ls
+        run: pwd && ls out
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: out
+          path: /home/runner/work/TechNotes/TechNotes/tech-notes/out
 
   # Deployment job
   deploy:
