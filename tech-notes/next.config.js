@@ -2,7 +2,11 @@
 const nextConfig = {
     output: 'export',
     assetPrefix: '/TechNotes/',
-    basePath: '/TechNotes'
+    basePath: '/TechNotes',
+    images: {
+        loader: 'custom',
+        loaderFile: './lib/image_loader.js',
+      },
 }
 
 module.exports = nextConfig
