@@ -1,8 +1,9 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
-            "name": "Launch via NPM",
+            "name": "Run",
             "request": "launch",
             "runtimeArgs": [
                 "run",
@@ -14,6 +15,20 @@
                 "<node_internals>/**"
             ],
             "type": "node",
+        },
+        {
+            "name": "Test",
+            "request": "launch",
+            "runtimeArgs": [
+                "test",
+            ],
+            "cwd": "${workspaceFolder}/tech-notes",
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+            "console": "integratedTerminal"
         },
     ]
 }

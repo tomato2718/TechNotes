@@ -1,9 +1,10 @@
 import type { ReactElement } from 'react';
 import type { Dree } from 'dree';
+import Link from 'next/link';
 
 import { get_content_tree } from '@/lib/get_notes';
 
-export function NoteContents(): ReactElement|null {
+export function NoteContents(): ReactElement {
     let tree = get_content_tree()
     return (
         <ul className='flex flex-col list-none gap-4' id='NoteContents'>
@@ -19,7 +20,7 @@ export function NoteContents(): ReactElement|null {
     )
 }
 
-function render_tree(tree: Dree): ReactElement|null {
+function render_tree(tree: Dree): ReactElement {
     return (
         <li className='ms-2' key={tree.hash}>
             {
@@ -39,7 +40,7 @@ function render_tree(tree: Dree): ReactElement|null {
                     </ul>
                     </>
                 ) :
-                <a className='text-slate-400 hover:text-white line-clamp-2 hover:line-clamp-none' href='#'>{tree.name}</a>
+                <Link className='text-slate-400 hover:text-white line-clamp-2 hover:line-clamp-none' href={"/" + tree.relativePath}>{tree.name}</Link>
             }
         </li>
     )
