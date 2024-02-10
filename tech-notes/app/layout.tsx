@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link'
 
 import type { Metadata } from 'next';
 import type {
@@ -47,9 +48,9 @@ function Nav(): ReactElement{
           </div>
           <nav className='flex flex-row h-auto' id='Navbar'>
             <ul className='flex flex-row gap-1 h-full'>
-              <li><a href="/">首頁</a></li>
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">聯絡我</a></li>
+              <li><Link href="/">首頁</Link></li>
+              <li><Link href="https://github.com/tomato2718">GitHub</Link></li>
+              <li><Link href="#">聯絡我</Link></li>
             </ul>
           </nav>
         </div>
