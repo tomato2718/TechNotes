@@ -1,9 +1,10 @@
-import type {Dree} from 'dree';
-
 import { generateStaticParams } from './page';
 
-test('test', () => {
-    let res = generateStaticParams()
-    console.log(res)
+test('generateStaticParams', () => {
+    let params = generateStaticParams()
+    params.forEach(param => {
+        expect(param).toHaveProperty("notes")
+        expect(param.notes).toBeInstanceOf(Array<String>)
+    });
 })
 
